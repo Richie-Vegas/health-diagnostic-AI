@@ -46,7 +46,7 @@ if st.button("Ask AI") and user_message.strip():
             reply = response.json()["reply"]
 
         except requests.exceptions.RequestException as e:
-            reply = f"⚠️ Error contacting backend: {str(e)}"
+            reply = f" Error contacting backend: {str(e)}"
 
     # Add agent's reply to chat history
     st.session_state.messages.append({"sender": "agent", "text": reply})
@@ -56,7 +56,7 @@ for msg in st.session_state.messages:
     if msg["sender"] == "user":
         st.markdown(f"""
             <div style="background-color:#1976d2; color:white; padding:10px; border-radius:5px; margin-bottom:10px;">
-                <b>🧑 You:</b><br>{msg['text']}
+                <b> You:</b><br>{msg['text']}
             </div>
         """, unsafe_allow_html=True)
     else:
@@ -70,7 +70,7 @@ for msg in reversed(st.session_state.messages):
     if msg["sender"] == "user":
         st.markdown(f"""
             <div style="background-color:#1976d2; color:white; padding:10px; border-radius:5px; margin-bottom:10px;">
-                <b>🧑 You:</b><br>{msg['text']}
+                <b> You:</b><br>{msg['text']}
             </div>
         """, unsafe_allow_html=True)
     else:
