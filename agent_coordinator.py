@@ -28,7 +28,7 @@ class AgentCoordinator:
 
         if responses:
             combined = "\n\n---\n\n".join(responses)
-            return f"🧠 AI Diagnostic Summary:\n\n{combined}"
+            return f" AI Diagnostic Summary:\n\n{combined}"
         else:
             return (
                 "🩺 Sorry, no specific diagnostic matches were found.\n"
